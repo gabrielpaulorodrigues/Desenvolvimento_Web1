@@ -32,14 +32,50 @@ function positivoNegativo(){
 }
 
 function masculinoFeminino(){
-    var letra = (document.getElementById('letra').value);
+    var letra = document.getElementById('letra').value;
 
     let resultado
-    if (letra === M || letra === m){
-        resultado = "Masculino" }
-    else if (letra === F || letra === f){
-        resultado = "Feminino"}
-    else {resultado = "Sexo invalido"}
 
-    document.getElementById('exercicio3').textContent = 'O sexo é:' + resultado
+    letra = letra.toUpperCase();
+    if (letra == 'M'){                  // Função para ver se a letra é masculino ou feminino
+        resultado = 'Masculino';
+    }
+    else if (letra == 'F'){
+        resultado = 'Feminino';
+    }
+    else {
+        resultado = 'Sexo inválido';
+    }
+
+    document.getElementById('exercicio3').textContent = 'O sexo é: ' + resultado
+}
+
+function vogalConsoante(){
+    var letra = document.getElementById('letra').value;
+
+    let resultado
+    letra = letra.toUpperCase()
+    if (letra == 'A' || letra == 'E' || letra == 'I' || letra == 'O' || letra == 'U'){
+        resultado = 'Vogal'}
+    else{
+        resultado = 'Consoante'
+    }
+
+    document.getElementById('exercicio4').textContent = 'A letra é: ' + resultado
+}
+
+function divisivel(){
+    var numero = parseFloat(document.getElementById('numero').value);
+
+   var resto = numero % 5
+    
+   let resultado
+    if(resto == 0){
+        resultado = 'O número '  + numero +  ' é divisível por 5'
+    }
+    else{
+         resultado = 'O número '  + numero +  ' não é divisível por 5'
+    }
+
+    document.getElementById('exercicio5').textContent = resultado
 }
