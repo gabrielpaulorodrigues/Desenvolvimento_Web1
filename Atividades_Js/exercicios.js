@@ -17,16 +17,29 @@ function positivoNegativo(){
     var numero1 = parseFloat(document.getElementById('numero1').value);
 
     let resultado;
-    if (numero1 > 0){
-        resultado = 'positivo'
+    if (numero1 > 0){                              // Função para ver se o número é positivo ou negativo
+        resultado = 'Positivo'
     }
     else if (numero1 < 0){
-       resultado = 'negativo'
+       resultado = 'Negativo'
     }
     else {
-       resultado = 'zero'
+       resultado = 'Zero'
     }
 
     document.getElementById('exercicio2').textContent = 'O número é: ' + resultado
 
+}
+
+function masculinoFeminino(){
+    var letra = (document.getElementById('letra').value);
+
+    let resultado
+    if (letra === M || letra === m){
+        resultado = "Masculino" }
+    else if (letra === F || letra === f){
+        resultado = "Feminino"}
+    else {resultado = "Sexo invalido"}
+
+    document.getElementById('exercicio3').textContent = 'O sexo é:' + resultado
 }
