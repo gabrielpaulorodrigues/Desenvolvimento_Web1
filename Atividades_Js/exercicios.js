@@ -54,7 +54,7 @@ function vogalConsoante(){
     var letra = document.getElementById('letra').value;
 
     let resultado
-    letra = letra.toUpperCase()
+    letra = letra.toUpperCase()                         // Função para ver se a letra é vogal ou consoante 
     if (letra == 'A' || letra == 'E' || letra == 'I' || letra == 'O' || letra == 'U'){
         resultado = 'Vogal'}
     else{
@@ -69,13 +69,31 @@ function divisivel(){
 
    var resto = numero % 5
     
-   let resultado
-    if(resto == 0){
+   let resultado                         // Função para ver se o número é divisivel por 5
+    if(resto == 0){                                             
         resultado = 'O número '  + numero +  ' é divisível por 5'
     }
     else{
          resultado = 'O número '  + numero +  ' não é divisível por 5'
     }
 
-    document.getElementById('exercicio5').textContent = resultado
+    document.getElementById('exercicio5').textContent = resultado;
 }
+
+function intervalo(){
+
+    var numero = parseFloat(document.getElementById('numero').value);
+
+    let resultado
+
+    if(numero > 20 && numero < 90){
+        resultado = ' Está no intervalo'
+    }
+    else{
+        resultado = ' Não está no intervalo'
+    }
+
+    document.getElementById('exercicio6').textContent = numero + resultado
+}
+
+
