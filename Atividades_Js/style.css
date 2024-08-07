@@ -1,13 +1,17 @@
 body{
-    background-color: #000013;
+    background-image: radial-gradient(circle, #764ba2, #7657b4, #7364c6, #6e71d8, #667eea);
     color: #ffffff;
+    height: 100vh;
+
+    background-position: center;
+    background-size: cover;
 }
 .button {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
     color: #ffffff;
-    background-color: #00234d;
+    background-color: #231f66;
     text-decoration: none;
     border-radius: 10px;
     border: none;
@@ -19,7 +23,7 @@ body{
     margin: 5px 0;
 }
 .button:hover {
-    background-color: #0056b3;
+    background-color: #2f2c68;
 }
 section {
     margin: 40px 0;
@@ -27,4 +31,15 @@ section {
 
 form{
     color: #ffffff;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Alinha os botões horizontalmente ao centro */
+    gap: 10px; /* Espaço entre os botões */
+}
+.button-container button {
+    padding: 10px 20px; /* Espaçamento interno dos botões */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
 }
