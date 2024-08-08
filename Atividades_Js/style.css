@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;1,100&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=VT323&display=swap');
+
 body{
     background-image: radial-gradient(circle, #764ba2, #7657b4, #7364c6, #6e71d8, #667eea);
     color: #ffffff;
@@ -43,3 +46,20 @@ form{
     font-size: 16px; /* Tamanho da fonte */
     cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
 }
+
+.container{
+display: flex;
+justify-content: center;
+gap: 20px;
+align-items: center;
+height: 43vh;
+font-family: 'Montserrat';
+}
+
+.subtitulo{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 13px;
+    margin: 0pc;
+}
+
