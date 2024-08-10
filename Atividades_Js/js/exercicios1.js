@@ -167,7 +167,7 @@ function imparPar(){
 
     let numero = parseInt(document.getElementById('numero').value);
 
-    resultado = '';
+    let resultado = '';
 
     if(numero % 2 == 0){
         resultado = 'O número ' + numero + ' é par'
@@ -179,4 +179,25 @@ function imparPar(){
     document.getElementById('exercicio10').textContent = resultado
 
 
+}
+
+////////////////////////////////////////// lista 2 
+
+function proposta(){
+
+    let proposta = parseFloat(document.getElementById('proposta').value);   
+
+    let resultado = proposta - 170.00 // 170.00 valor do ingresso
+
+    if(resultado < 0){
+        resultado = 'A venda não vale a pena, você terá um prejuizo de: ' + resultado
+    }
+    else if(resultado = 0){
+        resultado = 'A venda não vale a pena você não irá ganhar nada'
+    }
+    else{
+        resultado = 'A venda valerá a pena você irá receber: ' + resultado
+    }
+
+    documents.getElementById('exercicio21').textContent = resultado
 }
