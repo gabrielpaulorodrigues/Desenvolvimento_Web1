@@ -42,9 +42,14 @@ form{
     gap: 10px; /* Espaço entre os botões */
 }
 .button-container button {
-    padding: 10px 20px; /* Espaçamento interno dos botões */
-    font-size: 16px; /* Tamanho da fonte */
-    cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+    padding: 12px 28px;                     
+    background-color: #ffffff;                                          
+    font-weight: bold;                        
+    border-radius: 10px;                       
+    font-family: 'Fira Code', monospace;      
+    text-transform: uppercase;                
+    cursor: pointer;              
+    border: none;           
 }
 
 .container{
@@ -58,9 +63,9 @@ font-size: 26px;
 }
 
 .subtitulo{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 100;
-    font-size: 23px;
+    font-size: 20px;
     margin: 0pc;
 }
 
@@ -89,5 +94,8 @@ font-size: 26px;
     padding: 0px;
 }
 
-
+html, body {
+    margin: 0;
+    padding: 0;
+}
 
