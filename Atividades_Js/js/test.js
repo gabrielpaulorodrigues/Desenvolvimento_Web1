@@ -1,5 +1,7 @@
 const prompt = require("prompt-sync")();
-const {proposta} = require("./exercicios2");
+const {
+    proposta,
+    numeroCurtidas} = require("./exercicios2");
 
 function testProposta(){
 
@@ -7,8 +9,17 @@ function testProposta(){
 
     let resultado = proposta(valorProposta);
 
-    console.log((resultado));
+    console.log(resultado);
     
+}
+
+function testCurtidas(){
+    
+    let dias = prompt('Digite o número de dias');
+
+    let resultado = numeroCurtidas(dias);
+
+    console.log(resultado)
 }
 
 testProposta();

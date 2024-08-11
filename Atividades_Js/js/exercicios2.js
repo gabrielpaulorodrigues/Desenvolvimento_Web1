@@ -1,13 +1,17 @@
+module.exports = {
+    proposta,
+    numeroCurtidas}; 
+
 function proposta(valorProposta){
     
     let resultado
 
     if (typeof document !== 'undefined') {
        let proposta = parseFloat(document.getElementById('proposta').value);
-        resultado = proposta - 170.00 // 170.00 valor do ingresso
+        resultado = proposta - 170.00 
     } else {
         valorProposta = parseFloat(valorProposta);
-        resultado = valorProposta - 170.00 // 170.00 valor do ingresso
+        resultado = valorProposta - 170.00 
     }  
 
     if(resultado < 0){
@@ -30,4 +34,29 @@ function proposta(valorProposta){
     
 }
 
-module.exports = {proposta}; 
+function numeroCurtidas(dias){
+
+    let resultado
+    let dias
+
+    if(typeof document !== 'undefined'){
+        dias = parseInt(document.getElementById('dias').value);
+        resultado = dias * 48
+    }
+    else{
+        dias = numeroCurtidas(dias);
+        resultado = dias * 48
+    }
+
+    if(typeof document !== 'undefined'){
+        document.getElementById('exercicio22').textContent = resultado;
+    }
+    else{
+        return resultado
+    }
+
+
+}
+
+
+
