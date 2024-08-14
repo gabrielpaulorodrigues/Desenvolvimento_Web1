@@ -1,6 +1,8 @@
 module.exports = {
     proposta,
-    numeroCurtidas}; 
+    numeroCurtidas,
+    numeroTweets,
+    notaFinal}; 
 
 function proposta(valorProposta){
     
@@ -37,14 +39,13 @@ function proposta(valorProposta){
 function numeroCurtidas(dias){
 
     let resultado
-    let dias
 
     if(typeof document !== 'undefined'){
         dias = parseInt(document.getElementById('dias').value);
         resultado = dias * 48
     }
     else{
-        dias = numeroCurtidas(dias);
+        dias = parseInt(dias)
         resultado = dias * 48
     }
 
@@ -52,11 +53,50 @@ function numeroCurtidas(dias){
         document.getElementById('exercicio22').textContent = resultado;
     }
     else{
-        return resultado
+        return resultado;
     }
 
 
 }
 
+function numeroTweets(tweets){
 
+    let resultado
+
+    if(typeof document !== 'undefined'){
+        tweets = parseInt(document.getElementById('tweets').value);
+        resultado = tweets * 80
+        document.getElementById('exercicio23').textContent = resultado;
+    }
+    else{
+        tweets = parseInt(tweets);
+        resultado = tweets * 80
+        return resultado;
+    }
+
+}
+
+function notaFinal(nota_inicial, tweets){
+
+    if(typeof document !== 'undefined'){
+    
+     nota_inicial = parseFloat(document.getElementById('nota_inicial').value);
+     tweets = parseInt(document.getElementById('tweets').value);
+     let nota_perdida = Math.floor(numeroTweets(tweets) / 100);
+    
+     let nota_final = parseFloat(nota_inicial - nota_perdida)
+
+     document.getElementById('exercicio24').textContent = nota_final
+    
+    }  
+    else{
+
+        let nota_perdida = Math.floor(numeroTweets(tweets) / 100);
+
+        let nota_final = parseFloat(nota_inicial - nota_perdida)
+
+        return nota_final
+    }
+
+}
 

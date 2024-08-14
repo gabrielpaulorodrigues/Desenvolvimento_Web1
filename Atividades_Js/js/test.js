@@ -1,7 +1,9 @@
 const prompt = require("prompt-sync")();
 const {
     proposta,
-    numeroCurtidas} = require("./exercicios2");
+    numeroCurtidas,
+    numeroTweets,
+    notaFinal} = require("./exercicios2");
 
 function testProposta(){
 
@@ -22,4 +24,25 @@ function testCurtidas(){
     console.log(resultado)
 }
 
-testProposta();
+function testTweets(){
+
+    let tweets = prompt('Digite o número de tweets')
+
+    let resultado = numeroTweets(tweets)
+
+    console.log(resultado)
+}
+
+function testNotafinal(){
+
+    let nota_inicial = prompt('Digite a nota inicial')
+
+    let tweets = prompt('Digite o número de tweets')
+
+    let nota_final = notaFinal(nota_inicial, tweets)
+
+    console.log(nota_final)
+
+}
+
+testNotafinal()
