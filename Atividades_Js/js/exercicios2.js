@@ -1,8 +1,12 @@
-module.exports = {
-    proposta,
-    numeroCurtidas,
-    numeroTweets,
-    notaFinal}; 
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+            proposta,
+            numeroCurtidas,
+            numeroTweets,
+            notaFinal
+        };
+    }
+
 
 function proposta(valorProposta){
     
@@ -66,37 +70,54 @@ function numeroTweets(tweets){
     if(typeof document !== 'undefined'){
         tweets = parseInt(document.getElementById('tweets').value);
         resultado = tweets * 80
-        document.getElementById('exercicio23').textContent = resultado;
+       
+        const elemento = document.getElementById('exercicio23');
+       
+        // Verifica se o elemento com o ID especificado existe na página
+        if (elemento) {      
+            // Se o elemento existir, atualiza seu conteúdo de texto com o resultado        
+            elemento.textContent = 'Resultado: ' + resultado;
+        }   
+        // Retorna o valor calculado de 'resultado', independentemente de o elemento existir ou não                                                 
+        return resultado
     }
     else{
+      
         tweets = parseInt(tweets);
+        
         resultado = tweets * 80
-        return resultado;
+       
+        return parseInt(resultado);
     }
 
 }
 
 function notaFinal(nota_inicial, tweets){
 
+
     if(typeof document !== 'undefined'){
     
-     nota_inicial = parseFloat(document.getElementById('nota_inicial').value);
-     tweets = parseInt(document.getElementById('tweets').value);
-     let nota_perdida = Math.floor(numeroTweets(tweets) / 100);
+        nota_inicial = parseFloat(document.getElementById('nota_inicial').value);
+     
+        tweets = parseInt(document.getElementById('tweets').value);
+     
+        let nota_perdida = Math.floor(numeroTweets(tweets) / 100);
     
-     let nota_final = parseFloat(nota_inicial - nota_perdida)
+        let nota_final = parseFloat(nota_inicial - nota_perdida)
 
-     document.getElementById('exercicio24').textContent = nota_final
-    
+        document.getElementById('exercicio24').textContent = 'nota = ' + nota_final
+        
     }  
     else{
 
         let nota_perdida = Math.floor(numeroTweets(tweets) / 100);
 
-        let nota_final = parseFloat(nota_inicial - nota_perdida)
+        let nota_final = parseFloat(Math.max(nota_inicial - nota_perdida, 0))
 
         return nota_final
     }
 
 }
+
+
 

@@ -45,4 +45,4 @@ function testNotafinal(){
 
 }
 
-testNotafinal()
+testTweets()
