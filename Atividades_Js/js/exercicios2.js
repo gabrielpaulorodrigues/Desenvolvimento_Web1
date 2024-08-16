@@ -1,43 +1,13 @@
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-            proposta,
-            numeroCurtidas,
-            numeroTweets,
-            notaFinal
-        };
-    }
 
+module.exports = {proposta}
 
-function proposta(valorProposta){
+function proposta(){
     
     let resultado
 
-    if (typeof document !== 'undefined') {
-       let proposta = parseFloat(document.getElementById('proposta').value);
-        resultado = proposta - 170.00 
-    } else {
-        valorProposta = parseFloat(valorProposta);
-        resultado = valorProposta - 170.00 
-    }  
-
-    if(resultado < 0){
-        resultado = 'A venda não vale a pena, você terá um prejuizo de: - ' + (-resultado).toFixed(2)
-    }
-    else if(resultado == 0){
-        resultado = 'A venda não vale a pena você não irá ganhar nada'
-    }
-    else{
-        resultado = 'A venda valerá a pena você irá receber: ' + resultado.toFixed(2)
-    }
-
-    if (typeof document !== 'undefined') {
-        document.getElementById('exercicio21').textContent = resultado;
-    }
-    else{
-        return resultado; 
-    }
-
-    
+    let proposta = parseFloat(document.getElementById('proposta').value);
+    resultado = proposta - 170.00 
+    document.getElementById('exercicio21').textContent = resultado;  
 }
 
 function numeroCurtidas(dias){

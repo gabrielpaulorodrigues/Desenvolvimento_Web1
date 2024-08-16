@@ -1,48 +1,27 @@
-const prompt = require("prompt-sync")();
-const {
-    proposta,
-    numeroCurtidas,
-    numeroTweets,
-    notaFinal} = require("./exercicios2");
+// proposta.test.js
 
-function testProposta(){
+// Função que configura o DOM e executa o teste
+function runTest() {
+    // Configura o DOM simulado
+    document.body.innerHTML = `
+      <input id="proposta" value="200" />
+      <div id="exercicio21"></div>
+    `;
+  
+    // Importa a função a ser testada
+    const { proposta } = require('./exercicios2');
+  
+    // Verifica se os elementos estão no DOM
+    const exercicio21Div = document.getElementById('exercicio21');
 
-    let valorProposta = prompt('Digite o valor da proposta');
-
-    let resultado = proposta(valorProposta);
-
-    console.log(resultado);
-    
-}
-
-function testCurtidas(){
-    
-    let dias = prompt('Digite o número de dias');
-
-    let resultado = numeroCurtidas(dias);
-
-    console.log(resultado)
-}
-
-function testTweets(){
-
-    let tweets = prompt('Digite o número de tweets')
-
-    let resultado = numeroTweets(tweets)
-
-    console.log(resultado)
-}
-
-function testNotafinal(){
-
-    let nota_inicial = prompt('Digite a nota inicial')
-
-    let tweets = prompt('Digite o número de tweets')
-
-    let nota_final = notaFinal(nota_inicial, tweets)
-
-    console.log(nota_final)
-
-}
-
-testTweets()
+    // Chama a função proposta
+    proposta();
+  
+    // Verifica o resultado esperado
+    const resultado = exercicio21Div.textContent;
+    expect(resultado).toBe('30'); // 200 - 170 = 30
+  }
+  
+  // Executa o teste
+  test('deve calcular e exibir a diferença corretamente', runTest);
+  
