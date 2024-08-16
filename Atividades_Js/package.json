@@ -10,5 +10,9 @@
   },
   "jest": {
     "testEnvironment": "jsdom"
+  },
+  "dependencies": {
+    "node": "^22.6.0",
+    "punycode": "^2.3.1"
   }
 }

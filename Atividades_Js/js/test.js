@@ -9,14 +9,16 @@ function testProposta() {
     
     const { proposta } = require('./exercicios2');
   
-    
-    const exercicio21Div = document.getElementById('exercicio21');
+    const input_proposta = document.getElementById('proposta')
+    const output_proposta = document.getElementById('exercicio21');
 
+    expect(input_proposta).not.toBeNull();
+    expect(output_proposta).not.toBeNull();
     
     proposta();
   
   
-    const resultado = exercicio21Div.textContent;
+    const resultado = output_proposta.textContent;
     expect(resultado).toBe('30'); // 200 - 170 = 30
   }
   
