@@ -1,5 +1,7 @@
 
-module.exports = {proposta}
+module.exports = {proposta,
+    numeroCurtidas
+}
 
 function proposta(){
     
@@ -13,23 +15,10 @@ function proposta(){
 function numeroCurtidas(dias){
 
     let resultado
-
-    if(typeof document !== 'undefined'){
-        dias = parseInt(document.getElementById('dias').value);
-        resultado = dias * 48
-    }
-    else{
-        dias = parseInt(dias)
-        resultado = dias * 48
-    }
-
-    if(typeof document !== 'undefined'){
-        document.getElementById('exercicio22').textContent = resultado;
-    }
-    else{
-        return resultado;
-    }
-
+    dias = parseInt(document.getElementById('dias').value);
+    resultado = dias * 48
+  
+    document.getElementById('exercicio22').textContent = resultado;
 
 }
 
