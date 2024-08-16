@@ -2,5 +2,4 @@
 node_modules/
 
 # Ignorar arquivos de configuração do Node.js
-package.json
 package-lock.json
