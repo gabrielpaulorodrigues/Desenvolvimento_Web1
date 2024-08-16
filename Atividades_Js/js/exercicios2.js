@@ -1,6 +1,8 @@
 
 module.exports = {proposta,
-    numeroCurtidas
+    numeroCurtidas,
+    numeroTweets,
+    notaFinal
 }
 
 function proposta(){
@@ -24,13 +26,12 @@ function numeroCurtidas(dias){
 
 function numeroTweets(tweets){
 
-    let resultado
+        let resultado
 
-    if(typeof document !== 'undefined'){
         tweets = parseInt(document.getElementById('tweets').value);
         resultado = tweets * 80
        
-        const elemento = document.getElementById('exercicio23');
+        let elemento = document.getElementById('exercicio23');
        
         // Verifica se o elemento com o ID especificado existe na página
         if (elemento) {      
@@ -39,44 +40,33 @@ function numeroTweets(tweets){
         }   
         // Retorna o valor calculado de 'resultado', independentemente de o elemento existir ou não                                                 
         return resultado
-    }
-    else{
-      
-        tweets = parseInt(tweets);
-        
-        resultado = tweets * 80
-       
-        return parseInt(resultado);
-    }
 
-}
+    }
 
 function notaFinal(nota_inicial, tweets){
 
-
-    if(typeof document !== 'undefined'){
-    
         nota_inicial = parseFloat(document.getElementById('nota_inicial').value);
      
         tweets = parseInt(document.getElementById('tweets').value);
      
-        let nota_perdida = Math.floor(numeroTweets(tweets) / 100);
+        let nota_perdida = Math.ceil(numeroTweets(tweets) / 100);
     
-        let nota_final = parseFloat(nota_inicial - nota_perdida)
-
-        document.getElementById('exercicio24').textContent = 'nota = ' + nota_final
-        
-    }  
-    else{
-
-        let nota_perdida = Math.floor(numeroTweets(tweets) / 100);
-
         let nota_final = parseFloat(Math.max(nota_inicial - nota_perdida, 0))
 
-        return nota_final
-    }
+        document.getElementById('exercicio24').textContent = nota_final
 
 }
 
+
+function tempoSono(){
+
+    pessoa1_sono = parseFloat(document.getElementById('pessoa1_sono').value)
+    pessoa2_sono = parseFloat(document.getElementById('pessoa2_sono').value)
+
+    tempo_filme_romantico = parseFloat(document.getElementById('tempo_filme').value)
+
+
+
+}
 
 
