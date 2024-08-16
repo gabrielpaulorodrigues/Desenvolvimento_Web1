@@ -21,10 +21,6 @@ function testProposta() {
     const resultado = output_proposta.textContent;
     expect(resultado).toBe('30'); // 200 - 170 = 30
   }
-  
-
-test('deve calcular e exibir a diferença corretamente', testProposta);
-
 
 function testNumeroCurtidas() {
   
@@ -51,8 +47,6 @@ function testNumeroCurtidas() {
     expect(resultado).toBe('240'); // 5 * 48 = 240
   }
   
-  test('deve calcular e exibir a quantidade de curtidas corretamente', testNumeroCurtidas);
-  
 function testnumeroTweets(){
 
     document.body.innerHTML = `
@@ -71,10 +65,11 @@ function testnumeroTweets(){
     numeroTweets()
 
     const resultado = output_tweets.textContent;
-    expect(resultado).toBe('80') // 10 * 80 = 80
+    expect(resultado).toBe('Resultado: 800') // 10 * 80 = 80
 }
-
-test('deve calcular e exibir a quantidade de tweets corretamente', testNumeroCurtidas);
+test('deve calcular e exibir a diferença corretamente', testProposta);
+test('deve calcular e exibir a quantidade de curtidas corretamente', testNumeroCurtidas);
+test('deve calcular e exibir a quantidade de tweets corretamente', testnumeroTweets);
 
 function testNotaFinal(){
 
@@ -100,4 +95,33 @@ function testNotaFinal(){
   expect(resultado).toBe('8') 
 }
 
+function testTempoSono() {
+  console.log('O teste testTempoSono está sendo executado');
+
+  document.body.innerHTML = `
+    <input id="minutos_sono_homem" value="90" />
+    <div id="exercicio25"></div>
+  `;
+
+  const {tempoSono} = require('./exercicios2')
+
+  const input = document.getElementById('minutos_sono_homem');
+  const output = document.getElementById('exercicio25');
+
+  expect(input).not.toBeNull();
+  expect(output).not.toBeNull();
+
+  tempoSono();
+
+  const resultado = output.textContent;
+  expect(resultado).toBe('1:30');
+}
+
+
+
+
+test('deve calcular e exibir a diferença corretamente', testProposta);
+test('deve calcular e exibir a quantidade de curtidas corretamente', testNumeroCurtidas);
+test('deve calcular e exibir a quantidade de tweets corretamente', testnumeroTweets);
 test('deve calcular e exibir a nota final corretamente', testNotaFinal);
+test('deve calcular e exibir o tempo de sono corretamente', testTempoSono);
