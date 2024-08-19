@@ -119,7 +119,7 @@ function testTempoSono() {
 
 function testProcessarNumeros() {
   document.body.innerHTML = `
-      <input id="numero" value="12-34343-333" />
+      <input id="numero" value="8234-234-32-2-56-7" />
       <div id="exercicio26"></div>
   `;
 
