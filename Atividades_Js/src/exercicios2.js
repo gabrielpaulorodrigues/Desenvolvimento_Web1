@@ -1,4 +1,5 @@
 
+
 module.exports = {proposta,
     numeroCurtidas,
     numeroTweets,
@@ -62,13 +63,15 @@ function notaFinal(nota_inicial, tweets){
 function tempoSono(){
 
     let minutos_sono_homem = parseFloat(document.getElementById('minutos_sono_homem').value)
+    let minutos_sono_mulher = parseFloat(document.getElementById('minutos_sono_mulher').value)
+
+    let horas_sono_mulher =  Math.floor(minutos_sono_mulher / 60)
+    let minutos_sono_mulher_restantes = minutos_sono_mulher % 60;
 
     let horas_sono_homem =  Math.floor(minutos_sono_homem / 60)
     let minutos_sono_homem_restantes = minutos_sono_homem % 60;
 
-    document.getElementById('exercicio25').textContent = horas_sono_homem + ':' + minutos_sono_homem_restantes
-
-
+    document.getElementById('exercicio25').textContent = horas_sono_homem + ':' + minutos_sono_homem_restantes + ' , ' + horas_sono_mulher + ':' + minutos_sono_mulher_restantes
 
 }
 

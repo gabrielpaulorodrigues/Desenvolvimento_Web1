@@ -7,7 +7,7 @@ function testProposta() {
     `;
   
     
-    const { proposta } = require('./exercicios2');
+    const { proposta } = require('../src/exercicios2');
   
     const input_proposta = document.getElementById('proposta')
     const output_proposta = document.getElementById('exercicio21');
@@ -30,7 +30,7 @@ function testNumeroCurtidas() {
     `;
   
     
-    const { numeroCurtidas } = require('./exercicios2');
+    const { numeroCurtidas } = require('../src/exercicios2');
   
     
     const diasInput = document.getElementById('dias');
@@ -54,7 +54,7 @@ function testnumeroTweets(){
       <div id="exercicio23"></div>
     `;
 
-    const {numeroTweets} = require('./exercicios2')
+    const {numeroTweets} = require('../src/exercicios2')
 
     const input_tweets = document.getElementById('tweets')
     const output_tweets =  document.getElementById('exercicio23')
@@ -67,9 +67,6 @@ function testnumeroTweets(){
     const resultado = output_tweets.textContent;
     expect(resultado).toBe('Resultado: 800') // 10 * 80 = 80
 }
-test('deve calcular e exibir a diferença corretamente', testProposta);
-test('deve calcular e exibir a quantidade de curtidas corretamente', testNumeroCurtidas);
-test('deve calcular e exibir a quantidade de tweets corretamente', testnumeroTweets);
 
 function testNotaFinal(){
 
@@ -79,7 +76,7 @@ function testNotaFinal(){
    <div id="exercicio24"></div>
   `;
 
-  const {notaFinal} = require('./exercicios2')
+  const {notaFinal} = require('../src/exercicios2')
 
   const input_nota_inicial = document.getElementById('nota_inicial')
   const input_tweets = document.getElementById('tweets')
@@ -93,35 +90,47 @@ function testNotaFinal(){
 
   const resultado = output_nota_final.textContent;
   expect(resultado).toBe('8') 
-}
+} 
 
 function testTempoSono() {
-  console.log('O teste testTempoSono está sendo executado');
 
   document.body.innerHTML = `
     <input id="minutos_sono_homem" value="90" />
+    <input id="minutos_sono_mulher" value="110" />
     <div id="exercicio25"></div>
   `;
 
-  const {tempoSono} = require('./exercicios2')
+  const {tempoSono} = require('../src/exercicios2')
 
-  const input = document.getElementById('minutos_sono_homem');
-  const output = document.getElementById('exercicio25');
+  const input_minutos_sono_homem = document.getElementById('minutos_sono_homem');
+  const input_minutos_sono_mulher = document.getElementById('minutos_sono_mulher');
+  
+  const output_resultado = document.getElementById('exercicio25');
 
-  expect(input).not.toBeNull();
-  expect(output).not.toBeNull();
+  expect(input_minutos_sono_homem).not.toBeNull();
+  expect(input_minutos_sono_mulher).not.toBeNull();
+  expect(output_resultado).not.toBeNull();
 
   tempoSono();
 
-  const resultado = output.textContent;
-  expect(resultado).toBe('1:30');
+  const resultado = output_resultado.textContent;
+  expect(resultado).toBe('1:30 , 1:50');
 }
 
+function testProcessarNumeros() {
+  document.body.innerHTML = `
+      <input id="numero" value="12-34343-333" />
+      <div id="exercicio26"></div>
+  `;
 
+  const { processarNumeros } = require('../src/exercicios3');
 
+  resultado = processarNumeros();
 
-test('deve calcular e exibir a diferença corretamente', testProposta);
-test('deve calcular e exibir a quantidade de curtidas corretamente', testNumeroCurtidas);
-test('deve calcular e exibir a quantidade de tweets corretamente', testnumeroTweets);
-test('deve calcular e exibir a nota final corretamente', testNotaFinal);
-test('deve calcular e exibir o tempo de sono corretamente', testTempoSono);
+  console.log(resultado)
+
+  console.log(Array.isArray(resultado));
+}
+// Execute o teste
+testProcessarNumeros();
+
