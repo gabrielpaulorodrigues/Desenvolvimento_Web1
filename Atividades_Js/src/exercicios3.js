@@ -1,5 +1,7 @@
 
 module.exports = {processarNumeros} 
+module.exports = {listaImparPar} 
+
 
 function processarNumeros() {
 
@@ -45,5 +47,25 @@ function processarNumeros() {
     'Negativos: ' + negativos + '\n' + 
     'Média positivos: ' + media_positivos.toFixed(2) + '\n' + 
     'Média negativos: ' + media_negativos.toFixed(2);   
+
+}
+
+function listaImparPar(){
+
+    const par = []
+    const impar = []
+
+    const numero = document.getElementById('numero').value
+
+    const numeros = numero.split("")
+
+    for(let i = 0; i < numeros.length; i++){
+        
+        if (numeros[i] % 2 == 0){
+            par.push(parseInt(numeros[i]))
+        } else {impar.push(parseInt(numeros[i]))}
+    }
+
+    return 'Números: ' + numeros + ' Par: ' + par + ' Impar: ' + impar
 
 }

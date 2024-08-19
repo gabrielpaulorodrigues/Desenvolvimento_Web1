@@ -125,12 +125,28 @@ function testProcessarNumeros() {
 
   const { processarNumeros } = require('../src/exercicios3');
 
-  resultado = processarNumeros();
+  let resultado = processarNumeros();
 
   console.log(resultado)
 
   console.log(Array.isArray(resultado));
 }
-// Execute o teste
-testProcessarNumeros();
+
+
+function testlistaImparPar() {
+  document.body.innerHTML = `
+      <input id="numero" value="121212" />
+      <div id="exercicio27"></div>
+  `;
+
+  const { listaImparPar } = require('../src/exercicios3');
+
+  let resultado = listaImparPar();
+
+  console.log(resultado)
+
+  console.log(Array.isArray(resultado))
+
+}
+testlistaImparPar();
 
