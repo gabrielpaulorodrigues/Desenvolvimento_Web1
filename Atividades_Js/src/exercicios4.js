@@ -17,7 +17,6 @@ function somaIntervalo(){
    }
 
    return ' A soma do intervalo: ' + intervalo + ' é ' + soma 
-
 }
 
 function diaSemana(){
@@ -56,7 +55,5 @@ function diaSemana(){
         return 'O dia da semana é invalido'
 
     }
-
-    
-
 }
+

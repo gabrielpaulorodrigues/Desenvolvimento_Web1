@@ -182,4 +182,22 @@ console.log(typeof resultado)
 
 }
 
-testDiasSemana()
+function testListaCompras(){
+  document.body.innerHTML = `
+  <input id="escolha" value="2" />
+  <div id="opcao2"></div>
+`;
+
+const {listaCompras} = require('../src/exercicios1');
+
+listaCompras()
+
+let menu = document.getElementById('opcao2').innerHTML
+
+expect(menu).not.toBeNull();
+
+console.log(menu)
+
+}
+
+testListaCompras()
