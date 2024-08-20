@@ -148,5 +148,38 @@ function testlistaImparPar() {
   console.log(Array.isArray(resultado))
 
 }
-testlistaImparPar();
 
+function testSomaIntervalo(){
+
+  document.body.innerHTML = `
+      <input id="numeros" value="10,20" />
+      <div id="exercicio28"></div>
+  `;
+
+  const {somaIntervalo} = require('../src/exercicios4');
+
+  let resultado = somaIntervalo()
+
+  console.log(resultado)
+
+  console.log(typeof resultado)
+}
+
+
+function testDiasSemana(){
+  document.body.innerHTML = `
+  <input id="dias" value="1" />
+  <div id="exercicio29"></div>
+`;
+
+const {diaSemana} = require('../src/exercicios4');
+
+let resultado = diaSemana()
+
+console.log(resultado)
+
+console.log(typeof resultado)
+
+}
+
+testDiasSemana()
