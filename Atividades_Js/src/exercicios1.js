@@ -1,39 +1,59 @@
 const { default: test } = require("node:test")
 
-module.exports = { listaCompras }
+module.exports = { listaCompras, atualizarDOM }
 
 function listaCompras(){
 
-    let listaCompras = []
+    const lista_compras = []
 
-    document.getElementById('menu').innerHTML = 
-    `Menu de opções:<br>
+    document.getElementById('menu').innerHTML =  `Menu de opções:<br>
     1. Adicionar item<br>
     2. Remover item<br>
     3. Mostrar lista de compras<br>
     4. Sair`;
 
-    let escolha = document.getElementById('escolha').ariaValueMax
+    let escolha = document.getElementById('escolha').value
 
     if(escolha == '1'){
 
         let item = document.getElementById('item').value
 
-        listaCompras.push(item)
+        lista_compras.push(item)
 
-        console.log('Item: ' + item + ' adicionado a lista ')
+        document.getElementById('lista-compras').innerHTML = lista_compras.join(', ')
+   
     } else if (escolha == '2'){
-
-        var opcao = document.getElementById('opcao2').innerHTML = 'Itens' + listaCompras 
-
-        let item = document.getElementById('item').value
         
-        listaCompras.indexOf(item)
+        let item = document.getElementById('item').value
+
+        let remover_indice = lista_compras.indexOf(item)
+
+        lista_compras.splice(remover_indice, 1)
+
+        document.getElementById('lista-compras').innerHTML = lista_compras.join(', ')
     }
-    
-
-    return opcao
-  
-
 }
+
+
+const lista_compras = [];
+function atualizarDOM(escolha, item) {
+   
+
+    if (escolha === '1') {
+       
+        lista_compras.push(item);
+
+        document.getElementById('lista-compras').innerHTML = lista_compras.join(', ') 
+        
+    }else if(escolha === '2'){
+
+        let remover_indice = lista_compras.indexOf(item)
+
+        lista_compras.splice(remover_indice, 1)
+
+        document.getElementById('lista-compras').innerHTML = lista_compras.join(', ')
+
+    }
+}
+
 
