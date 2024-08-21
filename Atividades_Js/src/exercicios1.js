@@ -16,9 +16,9 @@ function listaCompras(){
 
     if(escolha == '1'){
 
-        let item = document.getElementById('item').value
+        let item = document.getElementById('item').value.split(', ')
 
-        lista_compras.push(item)
+        item.forEach(i => lista_compras.push(i));
 
         document.getElementById('lista-compras').innerHTML = lista_compras.join(', ')
    
@@ -36,14 +36,17 @@ function listaCompras(){
 
 
 const lista_compras = [];
+
+
 function atualizarDOM(escolha, item) {
-   
 
     if (escolha === '1') {
        
-        lista_compras.push(item);
+        item = item.split(', ');
 
-        document.getElementById('lista-compras').innerHTML = lista_compras.join(', ') 
+        item.forEach(i => lista_compras.push(i));
+
+        document.getElementById('lista-compras').innerHTML =  lista_compras.join(', ');
         
     }else if(escolha === '2'){
 
@@ -51,6 +54,10 @@ function atualizarDOM(escolha, item) {
 
         lista_compras.splice(remover_indice, 1)
 
+        document.getElementById('lista-compras').innerHTML = lista_compras.join(', ')
+
+    }else if(escolha === '3'){
+        
         document.getElementById('lista-compras').innerHTML = lista_compras.join(', ')
 
     }
