@@ -77,16 +77,6 @@ font-size: 26px;
 
 }
 
-.button {
-    padding: 40px 20px;
-    font-size: 16px;
-    color: #ffffff;
-    background-color: #231f66;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
 .container-index{
     display: flex;
     align-items: flex-start;
@@ -99,3 +89,34 @@ html, body {
     padding: 0;
 }
 
+.container-exercicios {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.exercicios-container {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+input[type="text"] {
+    width: calc(100% - 22px); /* Ajusta a largura para caber com padding e borda */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #555;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios da lista 1</title>
+    <script src="/js/exercicios1.js" defer></script>
+    <link rel = 'stylesheet' href="/css/style.css">
+</head>
+<body>
+    <div class = 'container-exercicios'>
+        <div class = 'exercicios-container' >
+            <h1>Cálculo de Diferença</h1>
+            <label for="proposta">Valor da proposta:</label>
+            <input type="text" id="proposta" placeholder="Digite o valor da proposta">
+            <button onclick="exibirDiferenca()">Calcular Diferença</button>
+            <p id="resultado-proposta"></p>
+        </div>
+        <div id="input-section">
+            <label id="input-label">Digite a nota inicial:</label>
+            <input type="text" id="nota-inicial" placeholder="Nota Inicial">
+            <button onclick="avancar()">Próximo</button>
+        </div>
+        <div id="input-section-tweets" style="display: none;">
+            <label id="input-label-tweets">Digite o número de tweets:</label>
+            <input type="text" id="tweets-ano" placeholder="Número de Tweets">
+            <button onclick="exibirNotaFinal()">Calcular Nota Final</button>
+        </div>
+        <p id="resultado-nota-final"></p>
+    </div>
+
+<script>function avancar(){document.getElementById("input-section").style.display = 'none'; document.getElementById("input-section-tweets").style.display = 'block';}</script>
+
+
+</body>
+</html>

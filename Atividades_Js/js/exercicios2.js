@@ -1,3 +1,8 @@
+module.exports = {
+    exibirMaiorNumero,
+    exibirDivisivelPor5
+}
+
 function calcularMaiorNumero(numero1, numero2){
     
     let maior = numero1 > numero2 ? numero1 : numero2;
@@ -11,7 +16,7 @@ function exibirMaiorNumero() {
 
     let resultado = calcularMaiorNumero(numero1, numero2)
 
-    document.getElementById("resultadoMaiorNumero").textContent = `O maior número é: ${resultado}`;
+    document.getElementById("resultado-maior-numero").textContent = resultado
 }
 
 function calcularDivicivelPor5(numero){
@@ -21,10 +26,10 @@ function calcularDivicivelPor5(numero){
     return resultado
 }
 
-function exibirDivisivelPor5(numero) {
+function exibirDivisivelPor5() {
     let numero = parseFloat(document.getElementById("numero").value);
     
-    calcularDivicivelPor5(numero)
+    let resultado = calcularDivicivelPor5(numero)
     
-    document.getElementById("resultadoDivisivel").textContent = resultado;
+    document.getElementById("resultado-divisivel").textContent = resultado;
 }
