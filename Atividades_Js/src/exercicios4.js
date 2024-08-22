@@ -1,62 +1,36 @@
-module.exports = { somaIntervalo, diaSemana}
+function calculoObterNomeMes(numero) {
+    const meses = [
+        "Janeiro", "Fevereiro", "Março", "Abril",
+        "Maio", "Junho", "Julho", "Agosto",
+        "Setembro", "Outubro", "Novembro", "Dezembro"
+    ];
 
-function somaIntervalo(){
+    if (numero < 1 || numero > 12) {
+        return "Número inválido. Digite um número de 1 a 12.";
+    }
 
-   let soma = 0;
-
-   const numeros = Str(document.getElementById('numeros').value)
-
-   const intervalo = numeros.split(",").map(Number)
-
-   if (intervalo[0] > intervalo[1]){
-        intervalo.reverse()
-   }
-
-   for(let i = intervalo[0]; i <= intervalo[1]; i++){
-             soma += i;
-   }
-
-   return ' A soma do intervalo: ' + intervalo + ' é ' + soma 
-
+    return meses[numero - 1];
 }
 
-function diaSemana(){
+// Função que lida com a entrada e exibição
+function exibirObterNomeMes() {
+    // Captura o valor do input e converte para número
+    const numeroMes = parseInt(document.getElementById("numeroMes").value, 10);
 
-    const dias = document.getElementById('dias').value
+    // Obtém o nome do mês ou mensagem de erro
+    const resultado = obterNomeMes(numeroMes);
 
-    let dict_dias = {
-        Domingo: '1',
-        Segunda: '2',
-        Terça: '3',
-        Quarta: '4',
-        Quinta: '5',
-        Sexta: '6',
-        Sábado: '7',
-    }
+    // Exibe o resultado no DOM
+    document.getElementById("resultadoMes").textContent = resultado;
+}
 
-    const dict_dias_invertido = {};
+function calculoVerificarDivisibilidade(x, y) {
+    return x % y === 0 ? 1 : 0;
+}
 
-    for (const chave in dict_dias) {
-        if (dict_dias.hasOwnProperty(chave)) { // Verificar se a propriedade é própria do objeto
-            const valor = dict_dias[chave]; // Obter o valor correspondente à chave
-            dict_dias_invertido[valor] = chave;   // Inverter chave e valor
-        }
-    }
-
-    if (dict_dias[dias]){
-        
-        return 'Esse é o ' + dict_dias[dias] + 'ª dia da semana'
-
-    } else if (dict_dias_invertido[dias]){
-
-        return 'O dia da semana é ' + dict_dias_invertido[dias]
-
-    } else{
-
-        return 'O dia da semana é invalido'
-
-    }
-
-    
-
+function exibirVerificarDivisibilidade() {
+    const x = parseInt(document.getElementById("numero1").value);
+    const y = parseInt(document.getElementById("numero2").value);
+    const resultado = verificarDivisibilidade(x, y);
+    document.getElementById("resultadoDivisibilidade").textContent = resultado === 1 ? `${x} é divisível por ${y}` : `${x} não é divisível por ${y}`;
 }

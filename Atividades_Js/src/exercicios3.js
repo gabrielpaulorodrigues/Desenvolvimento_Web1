@@ -1,71 +1,57 @@
+function calcularProcessarNumeros(numeros) {
+    let negativos = [];
+    let somaPositivos = 0;
+    let countPositivos = 0;
 
-module.exports = {processarNumeros} 
-module.exports = {listaImparPar} 
-
-
-function processarNumeros() {
-
-    const positivos = []
-    const negativos = []
-    let soma_positivos = 0;
-    let soma_negativos = 0;
-
-    const numero = document.getElementById('numero').value; 
-
-    const numeros = numero.split("")
-
-    for(let i = 0; i < numeros.length; i++){  
-    
-        if (numeros[i] == "-"){ 
-            negativos.push(parseFloat("-" + numeros[i + 1])); // Concatena o sinal "-" com o próximo elemento e converte para um número negativo
-            numeros[i + 1] = "-" + numeros[i + 1];  // Atualiza o próximo elemento na lista 'numeros' para incluir o sinal "-"
-            numeros.splice(i, 1);    // Remove o sinal "-" da lista 'numeros'
+    for (let num of numeros) {
+        if (num < 0) {
+            negativos.push(num);
+        } else {
+            somaPositivos += num;
+            countPositivos++;
         }
     }
 
-    for(let i = 0; i < numeros.length; i++){  
-    
-        if (numeros[i] > 0){
-            positivos.push(parseFloat(numeros[i]))  // Converte o elemento para número de ponto flutuante e adiciona à lista 'positivos'
-        }
-    }
+    let mediaPositivos = countPositivos > 0 ? somaPositivos / countPositivos : 0;
 
-    for (let i = 0; i < positivos.length; i++) {
-        soma_positivos += positivos[i];  // Soma todos os números positivos
-    }
-
-    for (let i = 0; i < negativos.length; i++) {
-        soma_negativos += negativos[i];  // Soma todos os números negativos
-    }
-
-    let media_positivos = soma_positivos / positivos.length;
-
-    let media_negativos = soma_negativos / negativos.length;
-
-    return 'Lista: ' + numeros + '\n' + 
-    'Positivos: ' + positivos + '\n' + 
-    'Negativos: ' + negativos + '\n' + 
-    'Média positivos: ' + media_positivos.toFixed(2) + '\n' + 
-    'Média negativos: ' + media_negativos.toFixed(2);   
-
+    return {
+        negativos,
+        mediaPositivos
+    };
 }
 
-function listaImparPar(){
+function exibirProcessarNumeros() {
+    const numeros = document.getElementById("numeros").value.split(",").map(Number);
+    
+    const { negativos, mediaPositivos } = processarNumeros(numeros);
 
-    const par = []
-    const impar = []
+    document.getElementById("resultadoNegativos").textContent = "Números negativos: " + negativos.join(", ");
+    document.getElementById("resultadoMediaPositivos").textContent = "Média dos números positivos: " + mediaPositivos.toFixed(2);
+}
 
-    const numero = document.getElementById('numero').value
+function calculoProcessarImparPar(numeros) {
+    let pares = [];
+    let impares = [];
 
-    const numeros = numero.split("")
-
-    for(let i = 0; i < numeros.length; i++){
-        
-        if (numeros[i] % 2 == 0){
-            par.push(parseInt(numeros[i]))
-        } else {impar.push(parseInt(numeros[i]))}
+    for (let num of numeros) {
+        if (num % 2 === 0) {
+            pares.push(num);
+        } else {
+            impares.push(num);
+        }
     }
 
-    return 'Números: ' + numeros + ' Par: ' + par + ' Impar: ' + impar
+    return {
+        pares,
+        impares
+    };
+}
 
+function exibirProcessarImparPar() {
+    
+    const numeros = document.getElementById("numeros").value.split(",").map(Number);
+    const { pares, impares } = processarNumeros(numeros);
+
+    document.getElementById("resultadoPares").textContent = "Números pares: " + pares.join(", ");
+    document.getElementById("resultadoImpares").textContent = "Números ímpares: " + impares.join(", ");
 }

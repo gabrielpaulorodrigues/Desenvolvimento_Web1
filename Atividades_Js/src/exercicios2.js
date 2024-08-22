@@ -1,78 +1,30 @@
-
-
-module.exports = {proposta,
-    numeroCurtidas,
-    numeroTweets,
-    notaFinal,
-    tempoSono,
-}
-
-function proposta(){
+function calcularMaiorNumero(numero1, numero2){
     
-    let resultado
+    let maior = numero1 > numero2 ? numero1 : numero2;
 
-    let proposta = parseFloat(document.getElementById('proposta').value);
-    resultado = proposta - 170.00 
-    document.getElementById('exercicio21').textContent = resultado;  
+    return maior
 }
 
-function numeroCurtidas(dias){
+function exibirMaiorNumero() {
+    let numero1 = parseFloat(document.getElementById("numero1").value);
+    let numero2 = parseFloat(document.getElementById("numero2").value);
 
-    let resultado
-    dias = parseInt(document.getElementById('dias').value);
-    resultado = dias * 48
-  
-    document.getElementById('exercicio22').textContent = resultado;
+    let resultado = calcularMaiorNumero(numero1, numero2)
 
+    document.getElementById("resultadoMaiorNumero").textContent = `O maior número é: ${resultado}`;
 }
 
-function numeroTweets(tweets){
+function calcularDivicivelPor5(numero){
 
-        let resultado
+    let resultado = numero % 5 === 0 ? "O número é divisível por 5." : "O número não é divisível por 5.";
 
-        tweets = parseInt(document.getElementById('tweets').value);
-        resultado = tweets * 80
-       
-        let elemento = document.getElementById('exercicio23');
-       
-        // Verifica se o elemento com o ID especificado existe na página
-        if (elemento) {      
-            // Se o elemento existir, atualiza seu conteúdo de texto com o resultado        
-            elemento.textContent = 'Resultado: ' + resultado;
-        }   
-        // Retorna o valor calculado de 'resultado', independentemente de o elemento existir ou não                                                 
-        return resultado
+    return resultado
+}
 
-    }
-
-function notaFinal(nota_inicial, tweets){
-
-        nota_inicial = parseFloat(document.getElementById('nota_inicial').value);
-     
-        tweets = parseInt(document.getElementById('tweets').value);
-     
-        let nota_perdida = Math.ceil(numeroTweets(tweets) / 100);
+function exibirDivisivelPor5(numero) {
+    let numero = parseFloat(document.getElementById("numero").value);
     
-        let nota_final = parseFloat(Math.max(nota_inicial - nota_perdida, 0))
-
-        document.getElementById('exercicio24').textContent = nota_final
-
+    calcularDivicivelPor5(numero)
+    
+    document.getElementById("resultadoDivisivel").textContent = resultado;
 }
-
-
-function tempoSono(){
-
-    let minutos_sono_homem = parseFloat(document.getElementById('minutos_sono_homem').value)
-    let minutos_sono_mulher = parseFloat(document.getElementById('minutos_sono_mulher').value)
-
-    let horas_sono_mulher =  Math.floor(minutos_sono_mulher / 60)
-    let minutos_sono_mulher_restantes = minutos_sono_mulher % 60;
-
-    let horas_sono_homem =  Math.floor(minutos_sono_homem / 60)
-    let minutos_sono_homem_restantes = minutos_sono_homem % 60;
-
-    document.getElementById('exercicio25').textContent = horas_sono_homem + ':' + minutos_sono_homem_restantes + ' , ' + horas_sono_mulher + ':' + minutos_sono_mulher_restantes
-
-}
-
-
