@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de Números</title>
+    <script src="/js/exercicios2.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container-exercicios">
+        <div class="container-label">
+            <h2>Calcular Números Negativos e Média dos Positivos</h2>
+            <form onsubmit="event.preventDefault(); exibirListaNumeros();">
+                <label for="numero-input">Digite números separados por vírgula:</label>
+                <input type="text" id="numero-input" name="numero-input" required>
+                <button type="submit">Calcular</button>
+            </form>
+            <p id="resultado-negativos">Números negativos: </p>
+            <p id="resultado-media-positivos">Média dos positivos: </p>
+        </div>
+
+    
+        <div class="container-label-2">
+            <h2>Separar Números Pares e Ímpares</h2>
+            <form onsubmit="event.preventDefault(); exibirImparPar();">
+                <label for="numero-input">Digite números separados por vírgula:</label>
+                <input type="text" id="numero-input" name="numero-input" required>
+                <button type="submit">Separar</button>
+            </form>
+            <p id="resultado-pares">Números pares: </p>
+            <p id="resultado-impares">Números ímpares: </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de Mês e Divisibilidade</title>
+    <script src="/js/exercicios4.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container-exercicios">
+        <div class="container-label">
+            <h2>Obter Nome do Mês</h2>
+            <form onsubmit="event.preventDefault(); exibirObterNomeMes();">
+                <label for="input-numero-mes">Digite um número de 1 a 12:</label>
+                <input type="number" id="input-numero-mes" name="input-numero-mes" min="1" max="12" required>
+                <button type="submit">Obter Mês</button>
+            </form>
+            <p id="resultado-mes">Nome do mês: </p>
+        </div>
+
+        <div class="container-label-2">
+            <h2>Verificar Divisibilidade</h2>
+            <form onsubmit="event.preventDefault(); exibirVerificarDivisibilidade();">
+                <label for="input-numero1">Número 1:</label>
+                <input type="number" id="input-numero1" name="input-numero1" required>
+
+                <label for="input-numero2">Número 2:</label>
+                <input type="number" id="input-numero2" name="input-numero2" required>
+
+                <button type="submit">Verificar</button>
+            </form>
+            <p id="resultado-divisibilidade">Resultado: </p>
+        </div>
+    </div>
+</body>
+</html>
