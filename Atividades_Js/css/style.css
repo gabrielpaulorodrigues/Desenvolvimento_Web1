@@ -3,14 +3,14 @@
 
 body{
     display: flex;
-    background-image: radial-gradient(circle, #764ba2, #7657b4, #7364c6, #6e71d8, #667eea);
-    height: 100vh;
+    background-color: #161b22;
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 0;
     margin: 0;
-    gap: 20px;
+    gap: 25px;
 }
 
 .index-container{
@@ -25,6 +25,7 @@ body{
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    color: #c9d1d9;
 }
 
 .index-container__subtitulo{
@@ -32,9 +33,42 @@ body{
     margin: 0;
 }
 
-
-
 img {
     width: 38px;
     height: 38px;
+}
+
+.index-button-container{
+    display: flex;
+    gap: 30px
+}
+
+.index-button{
+    border-radius: 32px;
+    width: 90px;
+    height: 25px;
+    box-shadow: 0 0px 2px rgb(255, 255, 255);
+}
+
+.exercicios-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 400px
+}
+
+.label-container{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    text-align: center;
+    border-radius: 20px;
+    width: 400;
+    height: 400;
+    gap: 70px
+
+}
+
+input[type="number"]{
+   border-radius: 20px;
 }
