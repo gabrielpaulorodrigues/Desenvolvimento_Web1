@@ -2,122 +2,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=VT323&display=swap');
 
 body{
-    background-image: radial-gradient(circle, #764ba2, #7657b4, #7364c6, #6e71d8, #667eea);
-    color: #ffffff;
-    height: 100vh;
-
-    background-position: center;
-    background-size: cover;
-}
-
-.button-container {
     display: flex;
-    justify-content: center; /* Alinha os botões horizontalmente ao centro */
-    gap: 10px; /* Espaço entre os botões */
-}
-.button-container button {
-    padding: 12px 28px;                     
-    background-color: #ffffff;                                          
-    font-weight: bold;                        
-    border-radius: 10px;                       
-    font-family: 'Fira Code', monospace;      
-    text-transform: uppercase;                
-    cursor: pointer;              
-    border: none;           
+    background-image: radial-gradient(circle, #764ba2, #7657b4, #7364c6, #6e71d8, #667eea);
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
 }
 
-.container{
-display: flex;
-justify-content: center;
-gap: 20px;
-align-items: center;
-height: 50vh;
-font-family: 'Montserrat';
-font-size: 26px;
+.index-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0;
+    gap: 20px
 }
 
-.subtitulo{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 100;
-    font-size: 20px;
-    margin: 0pc;
-}
-
-.button-container {
-    display: flex; 
-    justify-content: center; 
-    gap: 10px; 
-    margin-top: -7%; 
-
-}
-
-.container-index{
+.index-container__titulo{
     display: flex;
     align-items: flex-start;
-    gap: 20px;
-    padding: 0px;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
-.container-exercicios {
-    display: flex;
-    justify-content: center; /* Espaço entre os contêineres */
-    align-items: center;
-    height: 100vh;
-    gap: 20px; /* Espaçamento entre os dois formulários */
-}
-
-.container-label, .container-label-2 {
-    flex: 1; /* Ambos os contêineres ocupam o mesmo espaço */
-    display: flex;
-    flex-direction: column; /* Empilha os elementos verticalmente */
-    justify-content: space-between; /* Espaça os elementos verticalmente */
-    padding: 20px;
-    background-color: #f5f5f5 ;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-width: 300px; /* Largura mínima para ambos os formulários */
-    max-width: 400px; /* Largura máxima para ambos os formulários */
-    height: 300;
-    box-sizing: border-box;
-    margin: 30px;
-    color: #333333;
-}
-
-form {
-    display: flex;
     flex-direction: column;
-    gap: 15px; /* Espaçamento entre os campos do formulário */
 }
 
-button {
-    align-self: center; /* Centraliza o botão horizontalmente */
-    width: 100%; /* Faz o botão ocupar toda a largura do formulário */
-    padding: 10px;
-    background-color: #000000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.index-container__subtitulo{
+    display: flex;
+    margin: 0;
 }
 
-button:hover {
-    background-color: #0056b3;
-}
 
-input[type="number"] {
-    background-color: #f9f9f9; /* Fundo claro para os campos */
-    border: 1px solid #cccccc; /* Borda cinza clara */
-    color: #333333; /* Texto escuro para legibilidade */
-}
 
-.container-label p, 
-.container-label-2 p {
-    color: #333333; /* Cor do texto dos parágrafos */
+img {
+    width: 38px;
+    height: 38px;
 }

@@ -12,8 +12,8 @@
         <div class="container-label">
         <h2>Calcular Diferença entre Valor Pago e Proposta</h2>
         <form onsubmit="event.preventDefault(); exibirDiferenca();">
-            <label for="proposta">Valor da Proposta:</label>
-            <input type="number" id="proposta" name="proposta" step="0.01" required>
+            <label for="proposta"></label>
+            <input type="number" id="proposta" name="proposta" step="0.01" placeholder="Valor da proposta" required>
 
             <button type="submit">Calcular Diferença</button>
         </form>
@@ -22,11 +22,11 @@
         <div class="container-label-2">
         <h2>Calcular Nota Final com Base nos Tweets</h2>
         <form onsubmit="event.preventDefault(); exibirNotaFinal();">
-            <label for="nota-inicial">Nota Inicial:</label>
-            <input type="number" id="nota-inicial" name="nota-inicial" step="0.01" required>
+            <label for="nota-inicial"></label>
+            <input type="number" id="nota-inicial" name="nota-inicial" step="0.01" placeholder="Nota Inicial">
 
-            <label for="tweets-ano">Número de Tweets no Ano:</label>
-            <input type="number" id="tweets-ano" name="tweets-ano" required>
+            <label for="tweets-ano"></label>
+            <input type="number" id="tweets-ano" name="tweets-ano" placeholder="Número de Tweets no Ano" required>
 
             <button type="submit">Calcular Nota Final</button>
         </form>
